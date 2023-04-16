@@ -1,0 +1,72 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "a733197d2bdfb2611c13f2e542556b97",
+    "packages": [
+        {
+            "name": "joetannenbaum/alfred-workflow",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/joetannenbaum/alfred-workflow.git",
+                "reference": "e2c6252e60f0c8f1e82916c2caae848e78c28806"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/joetannenbaum/alfred-workflow/zipball/e2c6252e60f0c8f1e82916c2caae848e78c28806",
+                "reference": "e2c6252e60f0c8f1e82916c2caae848e78c28806",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "^7.4.0||^8.0"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.1",
+                "pestphp/pest": "^1.21",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Alfred\\Workflows\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joe Tannenbaum",
+                    "email": "joe@joe.codes"
+                }
+            ],
+            "description": "PHP helper for creating Alfred Workflows.",
+            "homepage": "https://joe.codes",
+            "support": {
+                "issues": "https://github.com/joetannenbaum/alfred-workflow/issues",
+                "source": "https://github.com/joetannenbaum/alfred-workflow"
+            },
+            "time": "2022-08-25T03:01:21+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}
