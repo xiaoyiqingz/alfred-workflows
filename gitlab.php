@@ -10,15 +10,11 @@ if (isset($argv[1])) {
 
 $w = new Workflow();
 $url =  $w->env('url');
-$name = $w->env('name');
 $token = $w->env('token');
 
-$access = sprintf("%s:%s", $name, $token);
-
 $ch = curl_init();
-$uri = sprintf("%s/search/suggest?query=%s", $url, $query);
+$uri = sprintf("%s/api/v4/search?search=%s&scope=projects&private_token=%s", $url, $query, $token);
 curl_setopt($ch, CURLOPT_URL, $uri);
-curl_setopt($ch, CURLOPT_USERPWD, $access);
 curl_setopt($ch, CURLOPT_PORT, 443);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
@@ -28,13 +24,12 @@ curl_close($ch);
 
 $data = json_decode($response, true);
 
-//print_r($data['suggestions']);
-
-if (isset($data['suggestions'])  && !empty($data['suggestions'])) {
-  foreach ($data['suggestions'] as $d) {
+if (!empty($data)) {
+  foreach ($data as $d) {
     $name = $d['name'];
     $w->item()
       ->title($name)
+      ->subtitle($d['path_with_namespace'])
       ->arg($name);
   }
 } else {
