@@ -34,6 +34,8 @@ if (!empty($data)) {
   }
 } else {
   $w->item()
-    ->title("No result was found");
+    ->title($query)
+    ->subtitle('try to search in gitlab ....')
+    ->arg($query);
 }
 $w->output();

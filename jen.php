@@ -39,6 +39,8 @@ if (isset($data['suggestions'])  && !empty($data['suggestions'])) {
   }
 } else {
   $w->item()
-    ->title("No result was found");
+    ->title($query)
+    ->subtitle("try to search in jenkins")
+    ->arg($query);
 }
 $w->output();
