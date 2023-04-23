@@ -8,3 +8,4 @@ require_once("jen.php");
 2. script file 之后使用open url
 
 3. 需设置env: url, name, token(token或密码)
+
