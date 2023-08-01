@@ -5,7 +5,7 @@ use Alfred\Workflows\Workflow;
 
 $query = "";
 if (isset($argv[1])) {
-  $query = $argv[1];
+    $query = $argv[1];
 }
 
 $w = new Workflow();
@@ -25,17 +25,17 @@ curl_close($ch);
 $data = json_decode($response, true);
 
 if (!empty($data)) {
-  foreach ($data as $d) {
-    $name = $d['name'];
-    $w->item()
-      ->title($name)
-      ->subtitle($d['path_with_namespace'])
-      ->arg($name);
-  }
+    foreach ($data as $d) {
+        $name = $d['name'];
+        $w->item()
+          ->title($name)
+          ->subtitle($d['path_with_namespace'])
+          ->arg($name);
+    }
 } else {
-  $w->item()
-    ->title($query)
-    ->subtitle('try to search in gitlab ....')
-    ->arg($query);
+    $w->item()
+      ->title($query)
+      ->subtitle('try to search in gitlab ....')
+      ->arg($query);
 }
 $w->output();

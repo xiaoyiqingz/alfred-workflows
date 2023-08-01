@@ -5,7 +5,7 @@ use Alfred\Workflows\Workflow;
 
 $query = "";
 if (isset($argv[1])) {
-  $query = $argv[1];
+    $query = $argv[1];
 }
 
 $w = new Workflow();
@@ -31,16 +31,16 @@ $data = json_decode($response, true);
 //print_r($data['suggestions']);
 
 if (isset($data['suggestions'])  && !empty($data['suggestions'])) {
-  foreach ($data['suggestions'] as $d) {
-    $name = $d['name'];
-    $w->item()
-      ->title($name)
-      ->arg($name);
-  }
+    foreach ($data['suggestions'] as $d) {
+        $name = $d['name'];
+        $w->item()
+          ->title($name)
+          ->arg($name);
+    }
 } else {
-  $w->item()
-    ->title($query)
-    ->subtitle("try to search in jenkins")
-    ->arg($query);
+    $w->item()
+      ->title($query)
+      ->subtitle("try to search in jenkins")
+      ->arg($query);
 }
 $w->output();
