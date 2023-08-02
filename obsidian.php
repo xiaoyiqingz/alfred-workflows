@@ -7,6 +7,7 @@ $query = "";
 if (isset($argv[1])) {
     $query = $argv[1];
 }
+
 $w = new Workflow();
 $url =  $w->env('url');
 $token = $w->env('token');
@@ -32,7 +33,8 @@ curl_close($ch);
 
 $data = json_decode($response, true);
 
-print_r($data);
+//print_r($data);
+
 if (empty($data)) {
     $w->item()
         ->title($query)
@@ -52,7 +54,9 @@ foreach ($data as $file) {
         if (isset($content['context'])) {
             $w->item()
                 ->title($fileName)
-                ->arg($content['context']);
+                ->subtitle($content['context'])
+                ->largeType($content['context'])
+                ->arg(sprintf("obsidian://advanced-uri?vault=Obsidian Vault&filename=%s&line=%d", $fileName, $content['match']['start']));
         }
     }
 }
