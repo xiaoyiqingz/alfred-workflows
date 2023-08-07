@@ -14,3 +14,9 @@ require_once("jen.php");
 #### Obsidian Search
 
 需要安装 `Advanced URI` 与 `Local REST API` 插件
+
+#### vscode Search
+
+search for recent file and folder
+
+based off [VSCode Project Search](https://www.packal.org/workflow/vscode-project-search)
